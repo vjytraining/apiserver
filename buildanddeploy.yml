@@ -1,0 +1,11 @@
+---
+- hosts : appservers
+  sudo: yes
+  remote_user: root
+  tasks:
+                - name:  Copying script to server
+                  copy:
+                          src: ~/builddeploy.sh 
+                          dest: ~/
+                - name: Executing the Script
+                  command: sh ~/builddeploy.sh                  
